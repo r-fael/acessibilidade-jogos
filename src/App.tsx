@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./App.module.scss";
 import menu from "./assets/menu.svg";
 import caption from "./assets/caption.svg";
@@ -9,6 +9,7 @@ import color from "./assets/color.svg";
 import target from "./assets/target.svg";
 import people from "./assets/people.svg";
 import settings from "./assets/settings.svg";
+import { useMediaQuery } from "@mui/material";
 
 const sections = [
   {
@@ -70,20 +71,42 @@ const sections = [
 ];
 
 function App() {
+  const isMobile = useMediaQuery("(max-width:912px)");
+
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
-    <div className={styles.app}>
+    <div className={isMobile ? styles.mobileApp : styles.app}>
       <div className={styles.header}>
         <h1 className={styles.title}>
           Acessibilidade em
-          <div className={styles.strong}> Jogos</div>
+          <span className={styles.strong}>Jogos</span>
         </h1>
-        <img className={styles.settingButton} src={settings} />
+        <button
+          className={styles.settingButton}
+          onClick={() => setOpenMenu((openMenu) => !openMenu)}
+        >
+          <img src={settings} />
+        </button>
+        {openMenu ? (
+          <div className={styles.menuContainer}>
+            <h3 className={styles.preferences}>Preferências</h3>
+            <div className={styles.optionsGrid}>
+              <p className={styles.label}>Fonte</p> <button>+</button>{" "}
+              <button>-</button>
+              <p className={styles.label}>Contraste</p> <button>+</button>{" "}
+              <button>-</button>
+            </div>
+            <button className={styles.returnToStandard}>
+              Voltar ao padrão
+            </button>
+          </div>
+        ) : null}
       </div>
       <div className={styles.body}>
         {sections.map((section) => (
           <div className={styles.section}>
             <div className={styles.titleContainer}>
-              <h1 className={styles.title}>{section.title}</h1>
+              <h2 className={styles.title}>{section.title}</h2>
               <img
                 src={section.icon}
                 alt={section.alt}

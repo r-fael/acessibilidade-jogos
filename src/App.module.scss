@@ -21,11 +21,91 @@
       }
     }
     .settingButton {
-      border: #fff solid 0.2rem;
-      padding: 0.5rem;
-      color: #fff;
+      position: relative;
+
+      outline: none;
+      background-color: transparent;
       border-radius: 1rem;
-      height: 2rem;
+      border: #fff solid 0.2rem;
+      &:hover {
+        background-color: #8173ee;
+        cursor: pointer;
+      }
+      &:active {
+        background-color: rgb(78, 67, 168);
+      }
+      img {
+        padding: 0.5rem;
+        color: #fff;
+        height: 2rem;
+      }
+    }
+    .menuContainer {
+      width: 18.75rem;
+      height: 10%rem;
+      border-radius: 1.25rem;
+      background-color: #7e70e9;
+      padding: 1.5rem 2.8rem;
+      right: 6rem;
+      top: 12rem;
+      z-index: 1;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      font-weight: bold;
+      gap: 1rem;
+      .preferences {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .optionsGrid {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 0.5rem;
+        align-items: center;
+        .label {
+          font-size: 1.25rem;
+        }
+        button {
+          width: 2.75rem;
+          height: 2.75rem;
+          color: #6a5ae0;
+          background-color: #fff;
+          border-radius: 1.25rem;
+          border: none;
+
+          &:hover {
+            background-color: #d1cbff;
+            cursor: pointer;
+          }
+          &:active {
+            background-color: rgb(78, 67, 168);
+            color: #fff;
+          }
+        }
+      }
+
+      .returnToStandard {
+        color: #6a5ae0;
+        background-color: #fff;
+        border-radius: 1.25rem;
+        border: none;
+        font-weight: bold;
+        padding: 0.75rem;
+
+        &:hover {
+          background-color: #d1cbff;
+          cursor: pointer;
+        }
+        &:active {
+          color: #fff;
+          background-color: rgb(78, 67, 168);
+        }
+      }
     }
   }
   .body {
@@ -48,6 +128,152 @@
         .icon {
           transform: translate(0px, 5px);
           max-height: 2.75rem;
+        }
+      }
+      .description {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+.mobileApp {
+  display: flex;
+  overflow-x: hidden;
+  background-color: #6a5ae0;
+  min-height: 100vh;
+  flex-direction: column;
+  .header {
+    display: flex;
+    padding: 3rem;
+    max-height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .title {
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      display: flex;
+      color: #fff;
+      font-weight: 200;
+      .strong {
+        font-weight: bold;
+      }
+    }
+    .settingButton {
+      position: relative;
+      outline: none;
+      background-color: transparent;
+      border-radius: 0.5rem;
+      border: #fff solid 0.2rem;
+      &:hover {
+        background-color: #8173ee;
+        cursor: pointer;
+      }
+      &:active {
+        background-color: rgb(78, 67, 168);
+      }
+      img {
+        padding: 0.5rem;
+        color: #fff;
+        height: 1rem;
+        width: 1rem;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.8rem;
+      width: 1.8rem;
+    }
+    .menuContainer {
+      width: 17rem;
+      height: 10%rem;
+      border-radius: 1.25rem;
+      background-color: #7e70e9;
+      padding: 1.5rem 2.8rem;
+      right: 2rem;
+      top: 8rem;
+      z-index: 1;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      font-weight: bold;
+      gap: 1rem;
+      .preferences {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .optionsGrid {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 0.5rem;
+        align-items: center;
+        .label {
+          font-size: 1.25rem;
+        }
+        button {
+          width: 2.75rem;
+          height: 2.75rem;
+          color: #6a5ae0;
+          background-color: #fff;
+          border-radius: 1.25rem;
+          border: none;
+
+          &:hover {
+            background-color: #d1cbff;
+            cursor: pointer;
+          }
+          &:active {
+            background-color: rgb(78, 67, 168);
+            color: #fff;
+          }
+        }
+      }
+
+      .returnToStandard {
+        color: #6a5ae0;
+        background-color: #fff;
+        border-radius: 1.25rem;
+        border: none;
+        font-weight: bold;
+        padding: 0.75rem;
+
+        &:hover {
+          background-color: #d1cbff;
+          cursor: pointer;
+        }
+        &:active {
+          color: #fff;
+          background-color: rgb(78, 67, 168);
+        }
+      }
+    }
+  }
+  .body {
+    padding-inline: 3rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    .section {
+      color: #fff;
+      .titleContainer {
+        display: flex;
+        gap: 1.4rem;
+        align-items: center;
+        .title {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+
+        .icon {
+          transform: translate(0px, 5px);
+          height: 1.8rem;
+          width: 1.8rem;
         }
       }
       .description {
