@@ -1,0 +1,58 @@
+.app {
+  display: flex;
+  overflow-x: hidden;
+  background-color: #6a5ae0;
+  min-height: 100vh;
+  flex-direction: column;
+  .header {
+    display: flex;
+    padding: 6rem;
+    max-height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      gap: 1rem;
+      font-size: 4.5rem;
+      display: flex;
+      color: #fff;
+      font-weight: 200;
+      .strong {
+        font-weight: bold;
+      }
+    }
+    .settingButton {
+      border: #fff solid 0.2rem;
+      padding: 0.5rem;
+      color: #fff;
+      border-radius: 1rem;
+      height: 2rem;
+    }
+  }
+  .body {
+    padding-inline: 6rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    .section {
+      color: #fff;
+      .titleContainer {
+        display: flex;
+        gap: 1.4rem;
+        align-items: center;
+        .title {
+          font-size: 3rem;
+          font-weight: bold;
+        }
+
+        .icon {
+          transform: translate(0px, 5px);
+          max-height: 2.75rem;
+        }
+      }
+      .description {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
